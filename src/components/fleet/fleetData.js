@@ -6,30 +6,35 @@ import {
 
 export const fleet = [
   {
-    name: "Sedan",
+    name: "Maruti Suzuki Dzire",
     description:
       "Comfortable rides for everyday city and outstation travel.",
     passengers: "4 Passengers",
     luggage: "2 Bags",
-    image:
-      "https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&w=1200&q=85",
+    image: `${import.meta.env.BASE_URL}img/dzire.jpg`,
   },
   {
-    name: "SUV",
+    name: "Maruti Suzuki Ertiga",
     description:
       "Spacious and comfortable travel for families and groups.",
     passengers: "6 Passengers",
     luggage: "3 Bags",
-    image:
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=85",
+    image: `${import.meta.env.BASE_URL}img/ertiga.jpg`,
   },
   {
-    name: "Premium Cab",
+    name: "Toyota Glanza",
     description:
-      "A refined travel experience for business and special journeys.",
+      "A stylish and comfortable car for city rides and everyday travel.",
     passengers: "4 Passengers",
+    luggage: "2 Bags",
+    image: `${import.meta.env.BASE_URL}img/glanza.jpg`,
+  },
+  {
+    name: "Toyota Innova",
+    description:
+      "Enjoy spacious and comfortable journeys with family and friends.",
+    passengers: "6 Passengers",
     luggage: "3 Bags",
-    image:
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85",
+    image: `${import.meta.env.BASE_URL}img/innova.jpg`,
   },
 ];
