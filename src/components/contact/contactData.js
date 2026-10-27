@@ -8,15 +8,15 @@ export const contactInfo = [
   {
     icon: Phone,
     title: "Call Us",
-    value: "+91 99999 99999",
-    link: "tel:+919999999999",
+    value: "+91 7358559444",
+    link: "tel:+91 7358559444",
     action: "Call Now",
   },
   {
     icon: MessageCircle,
     title: "WhatsApp",
     value: "Chat with our team",
-    link: "https://wa.me/919999999999",
+    link: "https://wa.me/91 7358559444",
     action: "Message Us",
   },
   {

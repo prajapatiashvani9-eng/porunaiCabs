@@ -9,7 +9,7 @@ function HeroActions() {
     <div className="mt-8 flex flex-col gap-4 sm:flex-row">
       {/* Call Button */}
       <a
-        href="tel:+919999999999"
+        href="tel:+91 7358559444"
         className="
           group
           inline-flex
@@ -47,7 +47,7 @@ function HeroActions() {
 
       {/* WhatsApp Button */}
       <a
-        href="https://wa.me/919999999999"
+        href="https://wa.me/91 7358559444"
         target="_blank"
         rel="noreferrer"
         className="

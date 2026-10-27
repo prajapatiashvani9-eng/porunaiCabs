@@ -150,7 +150,7 @@ function TariffCard({ tariff }) {
 
       {/* CTA */}
       <a
-        href="tel:+919999999999"
+        href="tel:+91 7358559444"
         className={`
           mt-auto
           flex

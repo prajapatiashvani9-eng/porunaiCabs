@@ -57,7 +57,7 @@ function FAQContact() {
         <div className="flex flex-col gap-3 sm:flex-row">
           {/* Call */}
           <a
-            href="tel:+919999999999"
+            href="tel:+91 7358559444"
             className="
               inline-flex
               items-center
@@ -82,7 +82,7 @@ function FAQContact() {
 
           {/* WhatsApp */}
           <a
-            href="https://wa.me/919999999999"
+            href="https://wa.me/91 7358559444"
             target="_blank"
             rel="noreferrer"
             className="

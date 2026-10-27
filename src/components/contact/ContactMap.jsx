@@ -17,7 +17,7 @@ function ContactMap() {
       {/* Google Maps Embed */}
       <iframe
         title="SwiftRide Cabs Location"
-        src="https://www.google.com/maps?q=Mumbai,India&output=embed"
+        src="https://www.google.com/maps/embed?pb=!1m19!1m8!1m3!1d49378.328067620234!2d77.709895!3d8.720634!3m2!1i1024!2i768!4f13.1!4m8!3e0!4m0!4m5!1s0x3b040d0035657273%3A0x26bf57b5699ca547!2sFirst%20Floor%2C%20Thyagaraja%20Nagar%2C%20New%20Nehru%20Nagar%2C%20Brianna%2C%20Plot%20no%3A67%2C%20Thiyagaraja%20Nagar%2C%20Tirunelveli%2C%20Tamil%20Nadu%20627011!3m2!1d8.7017547!2d77.752915!5e1!3m2!1sen!2sin!4v1793122566272!5m2!1sen!2sin"
         className="
           absolute
           inset-0
@@ -80,7 +80,7 @@ function ContactMap() {
 
           <div>
             <p className="text-sm font-black text-white">
-              SwiftRide Cabs
+              Porunai Cabs
             </p>
 
             <p className="mt-1 text-xs text-slate-400">
@@ -90,7 +90,7 @@ function ContactMap() {
         </div>
 
         <a
-          href="https://www.google.com/maps/search/?api=1&query=Mumbai,India"
+          href="https://maps.app.goo.gl/zAtzVXeo2MUQ2VTd9"
           target="_blank"
           rel="noreferrer"
           className="
