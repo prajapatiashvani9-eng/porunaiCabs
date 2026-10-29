@@ -19,7 +19,7 @@ function NavbarLogo() {
           group-hover:scale-105
         "
       >P
-        {/* <img src="logo.jpeg" alt="Porunai Cabs Logo" /> */}
+        {/* <img src="/logo.jpeg" alt="Porunai Cabs Logo" /> */}
       </div>
 
       {/* Company Name */}
