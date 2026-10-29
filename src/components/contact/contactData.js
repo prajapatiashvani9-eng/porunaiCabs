@@ -22,8 +22,8 @@ export const contactInfo = [
   {
     icon: Mail,
     title: "Email Us",
-    value: "hello@swiftridecabs.in",
-    link: "mailto:hello@swiftridecabs.in",
+    value: "info@porunaicabs.com",
+    link: "mailto:info@porunaicabs.com",
     action: "Send Email",
   },
 ];

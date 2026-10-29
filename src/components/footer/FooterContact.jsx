@@ -24,7 +24,7 @@ function FooterContact() {
       <div className="mt-5 space-y-4">
         {/* Phone */}
         <a
-          href="tel:+919999999999"
+          href="tel:+91 7358559444"
           className="
             group
             flex
@@ -49,12 +49,12 @@ function FooterContact() {
             "
           />
 
-          <span>+91 99999 99999</span>
+          <span>+91 7358559444</span>
         </a>
 
         {/* Email */}
         <a
-          href="mailto:hello@swiftridecabs.in"
+          href="mailto:info@porunaicabs.com"
           className="
             group
             flex
@@ -80,7 +80,7 @@ function FooterContact() {
           />
 
           <span className="break-all">
-            hello@swiftridecabs.in
+            info@porunaicabs.com
           </span>
         </a>
 
