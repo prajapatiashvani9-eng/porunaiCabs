@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
+import ServiceModal from "./serviceDetails/ServiceModal";
 
 function ServiceCard({ service, index }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const Icon = service.icon;
 
   return (
@@ -105,16 +108,23 @@ function ServiceCard({ service, index }) {
           {service.description}
         </p>
 
-        {/* Learn More */}
-        <div
+        {/* Learn More Button */}
+        <button
+          type="button"
+          onClick={() => setIsModalOpen(true)}
           className="
             mt-6
-            flex
+            inline-flex
             items-center
             gap-2
             text-sm
             font-bold
             text-slate-900
+            transition-colors
+            duration-300
+            hover:text-amber-600
+            focus:outline-none
+            cursor-pointer
           "
         >
           <span>Learn More</span>
@@ -129,7 +139,7 @@ function ServiceCard({ service, index }) {
               group-hover:text-amber-500
             "
           />
-        </div>
+        </button>
       </div>
 
       {/* Bottom Hover Line */}
@@ -146,6 +156,14 @@ function ServiceCard({ service, index }) {
           group-hover:w-full
         "
       />
+
+      {/* Service Details Modal Popup */}
+      {isModalOpen && (
+        <ServiceModal
+          service={service}
+          onClose={() => setIsModalOpen(false)}
+        />
+      )}
     </div>
   );
 }
