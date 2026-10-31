@@ -11,145 +11,199 @@ export const services = [
   {
     icon: Plane,
     title: "Airport Transfers",
+
     description:
       "Comfortable and timely airport pickup and drop services for a stress-free journey.",
-    tagline: "24/7 Flight Tracking & Timely Drops",
+
+    tagline: "Airport Pickup & Drop",
+
     detailedDescription:
-      "Eliminate travel anxiety with our dedicated airport pickup and drop taxi service. We monitor your flight schedule in real time, ensuring your chauffeur is waiting for you whether your flight lands early or gets delayed.",
+      "Travel to and from the airport comfortably with SwiftRide Cabs. Whether you are travelling for business, family holidays or personal visits, we provide convenient airport pickup and drop services from Tirunelveli and nearby areas.",
+
     features: [
-      "Live flight status tracking with zero wait-time penalties",
-      "Doorstep pickup and direct terminal departure drop",
-      "Luggage loading and unloading assistance by chauffeurs",
-      "Fixed, all-inclusive upfront rates with no hidden tolls",
+      "Airport pickup and drop from Tirunelveli",
+      "Advance cab booking for scheduled flights",
+      "Comfortable air-conditioned vehicles",
+      "Assistance with luggage during pickup and drop",
     ],
+
     benefits: [
-      "Guaranteed on-time arrival for all flights",
-      "Sanitized, air-conditioned Sedans & spacious SUVs",
-      "Round-the-clock 24/7 booking support",
+      "Convenient doorstep pickup",
+      "Experienced and courteous drivers",
+      "Sedan and SUV vehicle options",
+      "Advance booking support",
     ],
+
     useCases:
-      "Domestic & international fliers, corporate executives, family holiday luggage travel.",
+      "Domestic and international travellers, family airport transfers, business trips and personal travel.",
+
     bookingDetails:
-      "Advance booking recommended. Available in Sedans (Dzire/Etios) and SUVs (Ertiga/Innova Crysta).",
+      "Advance booking is recommended. Share your flight timing, pickup location and destination while enquiring.",
   },
+
   {
     icon: MapPin,
     title: "Local Taxi",
+
     description:
       "Convenient city rides for shopping, office visits, meetings and everyday travel.",
-    tagline: "Point-to-Point City Rides & Hourly Packages",
+
+    tagline: "Comfortable City Travel",
+
     detailedDescription:
-      "Navigate city traffic and parking hassles with ease. Whether you need a quick point-to-point drop or an hourly rental cab to run multiple errands across town, our local taxi service gives you complete flexibility.",
+      "Explore Tirunelveli and nearby locations without worrying about driving or parking. Our local taxi service is suitable for everyday travel, shopping, appointments and personal journeys.",
+
     features: [
-      "Point-to-point city drops and flexible hourly packages (4h/40km, 8h/80km)",
-      "Zero peak-hour surge pricing during rush hours or rains",
-      "Polite, experienced local drivers with great route knowledge",
-      "Multiple stops allowed across town without rebooking",
+      "Local pickup and drop services",
+      "Travel for shopping and daily activities",
+      "Multiple stops based on your travel plan",
+      "Flexible booking arrangements",
     ],
+
     benefits: [
-      "Prompt doorstep pickup within minutes",
-      "Clean, chilled air-conditioned cabs",
-      "Transparent meters and pocket-friendly tariffs",
+      "Convenient doorstep pickup",
+      "Comfortable and clean vehicles",
+      "Experienced local drivers",
+      "Suitable vehicle options for different needs",
     ],
+
     useCases:
-      "City shopping, daily office commutes, hospital appointments, temple visits, family outings.",
+      "Shopping, office visits, hospital appointments, temple visits, family outings and daily city travel.",
+
     bookingDetails:
-      "Instant dispatch & advance booking available. Hatchback, Sedan, and SUV options.",
+      "Contact our team to confirm vehicle availability, travel duration and applicable local taxi fares.",
   },
+
   {
     icon: Route,
     title: "Outstation Trips",
+
     description:
       "Travel comfortably to nearby cities and destinations with reliable outstation cabs.",
-    tagline: "Intercity Tours & Weekend Getaways",
+
+    tagline: "Explore More Destinations",
+
     detailedDescription:
-      "Embark on refreshing intercity journeys and vacation tours without driving fatigue. Our highway-certified chauffeurs ensure a smooth ride with freedom to stop for tea, photos, or meals whenever you wish.",
+      "Plan comfortable outstation journeys from Tirunelveli to popular destinations across Tamil Nadu and nearby states. Whether you are planning a family holiday, weekend getaway or pilgrimage, choose a vehicle that suits your travel requirements.",
+
     features: [
-      "Experienced highway chauffeurs with stellar safety records",
-      "GPS-equipped commercial vehicles with valid state permits",
-      "Transparent per-kilometer billing with clear driver batta terms",
-      "Custom multi-day tour itineraries and sightseeing flexibility",
+      "Tirunelveli to Kanyakumari",
+      "Tirunelveli to Kodaikanal",
+      "Tirunelveli to Madurai",
+      "Tirunelveli to Kutralam and Tenkasi",
+      "Customized intercity travel plans",
     ],
+
     benefits: [
-      "Safe, well-maintained vehicles for long distances",
-      "24/7 roadside assistance and travel support",
-      "No hidden kilometer calculations or surprise extras",
+      "Comfortable vehicles for long journeys",
+      "Experienced drivers",
+      "Sedan and SUV options",
+      "Advance trip planning support",
     ],
+
     useCases:
-      "Hill station tours, pilgrimage circuits, family holiday trips, destination weddings.",
+      "Family vacations, hill station trips, pilgrimage journeys, sightseeing and weekend getaways.",
+
     bookingDetails:
-      "Sedans starting from ₹12/km, SUVs from ₹17/km. Custom multi-day packages available.",
+      "Popular packages are available for selected destinations. Contact us to confirm distance, duration, vehicle availability and package pricing.",
   },
+
   {
     icon: RefreshCw,
     title: "One Way & Round Trip",
+
     description:
       "Choose a flexible one-way or round-trip taxi option according to your travel plan.",
-    tagline: "Pay Only For One Side — Save Up to 40%",
+
+    tagline: "Flexible Travel Packages",
+
     detailedDescription:
-      "Why pay return charges when you are only traveling one direction? Our one-way taxi service saves you money with single-side billing, while our round-trip package keeps the vehicle and driver dedicated to you.",
+      "Choose a one-way cab when you only need to travel to your destination, or select a round-trip package when you plan to return. SwiftRide Cabs helps you arrange a suitable journey based on your schedule and destination.",
+
     features: [
-      "Pay only for one-side travel on all one-way intercity drops",
-      "Save up to 40% compared to standard two-way taxi rates",
-      "Same dedicated vehicle and driver for complete round-trip ease",
-      "Direct doorstep pickup and drop at your final destination",
+      "One-way intercity taxi bookings",
+      "Round-trip taxi packages",
+      "Flexible pickup and drop locations",
+      "Advance booking for planned journeys",
     ],
+
     benefits: [
-      "No return toll or empty-km return charges on one-way rides",
-      "Instant digital trip confirmation and GST receipt",
-      "Zero last-minute cancellation guarantee",
+      "Travel according to your schedule",
+      "Suitable vehicle options",
+      "Convenient booking assistance",
+      "Package details shared before confirmation",
     ],
+
     useCases:
-      "One-way airport drops, relocations, college drop-offs, planned weekend return trips.",
+      "Airport drops, intercity travel, family visits, college trips, business travel and weekend journeys.",
+
     bookingDetails:
-      "Flat one-way drop fares and value-packed round-trip options across all major routes.",
+      "Contact our team for one-way and round-trip fare details. Final pricing depends on the destination, vehicle and travel requirements.",
   },
+
   {
     icon: Users,
     title: "Corporate Travel",
+
     description:
       "Professional transportation solutions for employees, meetings and business travel.",
-    tagline: "Executive Mobility & Corporate Fleet",
+
+    tagline: "Business Travel Solutions",
+
     detailedDescription:
-      "Deliver a seamless, high-class mobility experience for your executives, clients, and VIP guests. We provide dedicated corporate accounts, GST-compliant invoicing, and top-tier chauffeurs trained in business etiquette.",
+      "Make business travel convenient with SwiftRide Cabs. We provide transportation arrangements for business meetings, employee travel, airport transfers and corporate visits in Tirunelveli and nearby cities.",
+
     features: [
-      "Dedicated corporate account manager for priority bookings",
-      "Consolidated monthly invoicing with 100% GST compliance",
-      "Uniformed, courteous chauffeurs adhering to corporate etiquette",
-      "Punctual transfers for airport delegates and VIP board members",
+      "Employee transportation arrangements",
+      "Business meeting and office transfers",
+      "Corporate airport pickup and drop",
+      "Vehicle arrangements for business guests",
     ],
+
     benefits: [
-      "Premium fleet including Ciaz, Ertiga, and Innova Crysta",
-      "Flexible corporate billing and credit terms",
-      "Guaranteed on-time arrival for all business meetings",
+      "Professional and courteous drivers",
+      "Comfortable travel options",
+      "Advance scheduling support",
+      "Flexible transportation arrangements",
     ],
+
     useCases:
-      "VIP client reception, corporate conferences, employee daily shuttles, executive airport transit.",
+      "Business meetings, employee travel, corporate visits, guest transportation and business airport transfers.",
+
     bookingDetails:
-      "Tailored corporate tariff agreements and monthly retainer plans available on request.",
+      "Contact our team to discuss regular transportation requirements, vehicle availability and corporate pricing.",
   },
+
   {
     icon: CarTaxiFront,
     title: "Customized Rides",
+
     description:
       "Plan your journey your way with flexible routes, timings and vehicle options.",
-    tagline: "Personalized Travel Tailored to You",
+
+    tagline: "Your Journey, Your Plan",
+
     detailedDescription:
-      "Have a unique travel requirement, multi-city pilgrimage route, or special event? Our customized ride service gives you full control over vehicle choice, travel pace, stops, and schedule.",
+      "Every journey is different. Whether you need multiple destinations, special travel arrangements or a customized sightseeing trip, SwiftRide Cabs helps plan your journey according to your requirements.",
+
     features: [
-      "Tailor-made itineraries based on your exact travel checklist",
-      "Wide choice of vehicles from Sedans to 14-seater Tempo Travellers",
-      "Flexible schedule with unlimited stops as per your convenience",
-      "Dedicated trip coordinator for large groups or complex routes",
+      "Customized pickup and drop locations",
+      "Multiple destinations in one journey",
+      "Flexible travel schedules",
+      "Vehicle selection according to group size",
     ],
+
     benefits: [
-      "Complete freedom to customize every part of your trip",
-      "Special discounts on long-duration bookings",
-      "Transparent all-inclusive packages (tolls, parking, driver allowance)",
+      "Personalized travel arrangements",
+      "Suitable vehicle options",
+      "Flexible itinerary planning",
+      "Booking assistance for special trips",
     ],
+
     useCases:
-      "Family weddings, heritage temple circuits, multi-city business tours, group excursions.",
+      "Family tours, temple visits, weddings, group outings, sightseeing and multi-city journeys.",
+
     bookingDetails:
-      "Speak directly with our team to get a personalized quote and vehicle recommendation.",
+      "Share your destinations, travel dates, passenger count and vehicle preference to receive a customized quotation.",
   },
 ];

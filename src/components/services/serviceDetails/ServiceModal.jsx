@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+
 import {
   X,
   CheckCircle2,
@@ -7,11 +8,19 @@ import {
   CalendarCheck,
   Phone,
   Sparkles,
+  ArrowRight,
+  Clock,
+  CarFront,
 } from "lucide-react";
 
 function ServiceModal({ service, onClose }) {
-  // Close on Escape key and prevent background body scrolling
+  const [isVisible, setIsVisible] = useState(false);
+
   useEffect(() => {
+    if (!service) return;
+
+    const previousOverflow = document.body.style.overflow;
+
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
         onClose();
@@ -21,11 +30,19 @@ function ServiceModal({ service, onClose }) {
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", handleKeyDown);
 
+    // Smooth opening animation
+    setIsVisible(false);
+
+    const animationFrame = requestAnimationFrame(() => {
+      setIsVisible(true);
+    });
+
     return () => {
-      document.body.style.overflow = "unset";
+      cancelAnimationFrame(animationFrame);
+      document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [onClose]);
+  }, [service, onClose]);
 
   if (!service) return null;
 
@@ -33,332 +50,263 @@ function ServiceModal({ service, onClose }) {
 
   const modalContent = (
     <div
-      className="
+      className={`
         fixed
         inset-0
         z-50
         flex
-        items-center
+        items-end
         justify-center
-        bg-slate-950/80
-        p-3
+        bg-slate-950/85
         backdrop-blur-sm
-        transition-opacity
+        p-0
+        transition-all
         duration-300
+        ease-out
+        sm:items-center
         sm:p-5
-        md:p-6
-      "
+        ${
+          isVisible
+            ? "opacity-100"
+            : "opacity-0"
+        }
+      `}
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-service-title"
     >
       <div
-        className="
+        className={`
           relative
           flex
-          max-h-[90dvh]
+          max-h-[94dvh]
           w-full
-          max-w-lg
+          max-w-2xl
           flex-col
           overflow-hidden
-          rounded-2xl
+          rounded-t-3xl
           border
           border-slate-200
           bg-white
           shadow-2xl
-          shadow-slate-950/25
           transition-all
-          duration-300
-          sm:max-w-xl
+          duration-500
+          ease-[cubic-bezier(0.22,1,0.36,1)]
+          sm:max-h-[90dvh]
           sm:rounded-3xl
-          md:max-w-2xl
-        "
+          ${
+            isVisible
+              ? "translate-y-0 scale-100 opacity-100"
+              : "translate-y-12 scale-[0.98] opacity-0 sm:translate-y-5"
+          }
+        `}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button - easily accessible on mobile and desktop */}
-        <button
-          type="button"
-          onClick={onClose}
-          aria-label="Close modal"
-          className="
-            absolute
-            right-3
-            top-3
-            z-20
-            grid
-            h-9
-            w-9
-            place-items-center
-            rounded-full
-            bg-slate-100
-            text-slate-500
-            transition-all
-            hover:bg-slate-200
-            hover:text-slate-950
-            focus:outline-none
-            cursor-pointer
-            sm:right-5
-            sm:top-5
-            sm:h-10
-            sm:w-10
-          "
-        >
-          <X size={18} className="sm:h-5 sm:w-5" />
-        </button>
+        {/* Top Accent */}
+        <div className="h-1.5 shrink-0 bg-gradient-to-r from-amber-500 via-amber-300 to-transparent" />
 
-        {/* Modal Header */}
-        <div
-          className="
-            shrink-0
-            border-b
-            border-slate-100
-            p-4
-            pr-14
-            sm:p-6
-            sm:pr-16
-            md:p-7
-          "
-        >
+        {/* Mobile Drag Indicator */}
+        <div className="flex justify-center pt-2 sm:hidden">
+          <div className="h-1 w-10 rounded-full bg-slate-300" />
+        </div>
+
+        {/* Header */}
+        <div className="relative shrink-0 border-b border-slate-100 bg-slate-950 px-5 py-5 pr-16 sm:px-7 sm:py-7">
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close modal"
+            className="
+              absolute
+              right-4
+              top-4
+              grid
+              h-10
+              w-10
+              place-items-center
+              rounded-full
+              border
+              border-white/10
+              bg-white/10
+              text-white
+              transition
+              hover:bg-white/20
+            "
+          >
+            <X size={19} />
+          </button>
+
           <div className="flex items-center gap-3 sm:gap-4">
-            {Icon && (
-              <div
-                className="
-                  grid
-                  h-11
-                  w-11
-                  shrink-0
-                  place-items-center
-                  rounded-xl
-                  bg-slate-950
-                  text-amber-400
-                  shadow-md
-                  sm:h-14
-                  sm:w-14
-                  sm:rounded-2xl
-                "
-              >
-                <Icon size={24} className="sm:h-7 sm:w-7" />
-              </div>
-            )}
+            <div className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-amber-400/20 bg-amber-400/10 text-amber-400 sm:h-16 sm:w-16">
+              {Icon && <Icon size={26} />}
+            </div>
 
-            <div className="min-w-0 flex-1">
+            <div className="min-w-0">
               {service.tagline && (
-                <span
-                  className="
-                    inline-block
-                    rounded-full
-                    bg-amber-50
-                    px-2.5
-                    py-0.5
-                    text-[10px]
-                    font-extrabold
-                    uppercase
-                    tracking-wider
-                    text-amber-700
-                    border
-                    border-amber-200/60
-                    sm:text-xs
-                  "
-                >
+                <span className="inline-block rounded-full bg-amber-400/10 px-2.5 py-1 text-[9px] font-extrabold uppercase tracking-wider text-amber-300 sm:text-[10px]">
                   {service.tagline}
                 </span>
               )}
 
               <h2
                 id="modal-service-title"
-                className="
-                  mt-1
-                  truncate
-                  text-lg
-                  font-black
-                  text-slate-900
-                  sm:text-2xl
-                  md:text-3xl
-                "
+                className="mt-1 break-words text-xl font-black text-white sm:text-2xl"
               >
                 {service.title}
               </h2>
+
+              <p className="mt-1 text-[11px] text-slate-400 sm:text-xs">
+                SwiftRide Cabs • Tirunelveli
+              </p>
             </div>
           </div>
         </div>
 
-        {/* Modal Scrollable Body */}
-        <div
-          className="
-            flex-1
-            overflow-y-auto
-            overflow-x-hidden
-            p-4
-            space-y-4
-            text-slate-600
-            sm:p-6
-            sm:space-y-5
-            md:p-7
-          "
-        >
-          {/* Main Description */}
-          <p className="text-xs sm:text-sm md:text-base leading-relaxed text-slate-600 break-words">
-            {service.detailedDescription || service.description}
-          </p>
+        {/* Scrollable Content */}
+        <div className="flex-1 space-y-5 overflow-y-auto overscroll-contain p-4 sm:space-y-6 sm:p-7">
 
-          {/* Key Features & Highlights */}
-          {service.features && service.features.length > 0 && (
-            <div className="rounded-xl border border-slate-100 bg-slate-50/80 p-3.5 sm:p-5 sm:rounded-2xl">
-              <h3 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-900 sm:text-sm">
-                <CheckCircle2
-                  size={16}
-                  className="text-amber-500 shrink-0 sm:h-[18px] sm:w-[18px]"
-                />
-                Key Features & Highlights
+          {/* Description */}
+          <section>
+            <div className="mb-3 flex items-center gap-2">
+              <Sparkles size={17} className="text-amber-500" />
+
+              <h3 className="text-xs font-extrabold uppercase tracking-wider text-slate-900">
+                About This Service
               </h3>
+            </div>
 
-              <ul className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-2.5">
+            <p className="text-sm leading-7 text-slate-600">
+              {service.detailedDescription || service.description}
+            </p>
+          </section>
+
+          {/* Features */}
+          {service.features?.length > 0 && (
+            <section className="rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:p-5">
+              <div className="flex items-center gap-2">
+                <div className="grid h-9 w-9 place-items-center rounded-xl bg-amber-400/15 text-amber-600">
+                  <CheckCircle2 size={19} />
+                </div>
+
+                <h3 className="text-sm font-extrabold text-slate-900">
+                  What's Included
+                </h3>
+              </div>
+
+              <div className="mt-4 space-y-3">
                 {service.features.map((feature, idx) => (
-                  <li
-                    key={idx}
-                    className="flex items-start gap-2 text-xs sm:text-sm text-slate-700 leading-snug break-words"
-                  >
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-400" />
-                    <span>{feature}</span>
-                  </li>
+                  <div key={idx} className="flex items-start gap-3">
+                    <CheckCircle2
+                      size={17}
+                      className="mt-0.5 shrink-0 text-amber-500"
+                    />
+
+                    <p className="text-sm leading-6 text-slate-600">
+                      {feature}
+                    </p>
+                  </div>
                 ))}
-              </ul>
-            </div>
+              </div>
+            </section>
           )}
 
-          {/* Why Choose This Service / Benefits */}
-          {service.benefits && service.benefits.length > 0 && (
-            <div className="rounded-xl border border-slate-100 bg-slate-50/80 p-3.5 sm:p-5 sm:rounded-2xl">
-              <h3 className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-900 sm:text-sm">
-                <ShieldCheck
-                  size={16}
-                  className="text-amber-500 shrink-0 sm:h-[18px] sm:w-[18px]"
-                />
-                Why Choose This Service
-              </h3>
+          {/* Benefits */}
+          {service.benefits?.length > 0 && (
+            <section>
+              <div className="mb-4 flex items-center gap-2">
+                <div className="grid h-9 w-9 place-items-center rounded-xl bg-emerald-50 text-emerald-600">
+                  <ShieldCheck size={19} />
+                </div>
 
-              <ul className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-2.5">
+                <h3 className="text-sm font-extrabold text-slate-900">
+                  Why Choose SwiftRide?
+                </h3>
+              </div>
+
+              <div className="space-y-3">
                 {service.benefits.map((benefit, idx) => (
-                  <li
+                  <div
                     key={idx}
-                    className="flex items-start gap-2 text-xs sm:text-sm text-slate-700 leading-snug break-words"
+                    className="flex items-start gap-3 rounded-xl border border-slate-100 bg-white p-3"
                   >
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-400" />
-                    <span>{benefit}</span>
-                  </li>
+                    <CheckCircle2
+                      size={17}
+                      className="mt-0.5 shrink-0 text-emerald-500"
+                    />
+
+                    <p className="text-sm leading-6 text-slate-600">
+                      {benefit}
+                    </p>
+                  </div>
                 ))}
-              </ul>
-            </div>
+              </div>
+            </section>
           )}
 
-          {/* Ideal For & Booking Info Boxes */}
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {service.useCases && (
-              <div className="rounded-xl border border-amber-200/60 bg-amber-50/70 p-3 sm:p-4">
-                <span className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-amber-900">
-                  <Sparkles
-                    size={14}
-                    className="text-amber-600 shrink-0 sm:h-4 sm:w-4"
-                  />
-                  Ideal For:
-                </span>
-                <p className="mt-1 text-xs leading-relaxed text-amber-900/90 sm:text-[13px] break-words">
-                  {service.useCases}
-                </p>
-              </div>
-            )}
+          {/* Ideal For */}
+          {service.useCases && (
+            <section className="rounded-2xl border border-amber-200 bg-amber-50 p-4">
+              <div className="flex items-center gap-2 text-amber-800">
+                <Sparkles size={17} />
 
-            {service.bookingDetails && (
-              <div className="rounded-xl border border-emerald-200/60 bg-emerald-50/70 p-3 sm:p-4">
-                <span className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-emerald-900">
-                  <CalendarCheck
-                    size={14}
-                    className="text-emerald-600 shrink-0 sm:h-4 sm:w-4"
-                  />
-                  Booking & Rates:
-                </span>
-                <p className="mt-1 text-xs leading-relaxed text-emerald-900/90 sm:text-[13px] break-words">
-                  {service.bookingDetails}
-                </p>
+                <h3 className="text-xs font-extrabold uppercase tracking-wider">
+                  Ideal For
+                </h3>
               </div>
-            )}
+
+              <p className="mt-3 text-sm leading-6 text-amber-900/80">
+                {service.useCases}
+              </p>
+            </section>
+          )}
+
+          {/* Booking Details */}
+          {service.bookingDetails && (
+            <section className="rounded-2xl border border-blue-200 bg-blue-50 p-4">
+              <div className="flex items-center gap-2 text-blue-800">
+                <CalendarCheck size={17} />
+
+                <h3 className="text-xs font-extrabold uppercase tracking-wider">
+                  Booking Details
+                </h3>
+              </div>
+
+              <p className="mt-3 text-sm leading-6 text-blue-900/80">
+                {service.bookingDetails}
+              </p>
+            </section>
+          )}
+
+          {/* Bottom Information */}
+          <div className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white p-4">
+            <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-slate-950 text-amber-400">
+              <Clock size={19} />
+            </div>
+
+            <div>
+              <p className="text-sm font-extrabold text-slate-900">
+                Plan Your Journey
+              </p>
+
+              <p className="mt-1 text-xs leading-5 text-slate-500">
+                Contact our team to discuss your travel requirements,
+                vehicle availability and package details.
+              </p>
+            </div>
           </div>
         </div>
 
-        {/* Modal Footer / Actions */}
-        <div
-          className="
-            shrink-0
-            border-t
-            border-slate-100
-            bg-slate-50/50
-            p-3.5
-            sm:p-5
-          "
-        >
-          <div className="flex flex-col-reverse gap-2 sm:flex-row sm:items-center sm:justify-end sm:gap-3">
-            <button
-              type="button"
-              onClick={onClose}
-              className="
-                w-full
-                rounded-xl
-                border
-                border-slate-200
-                bg-white
-                px-4
-                py-2.5
-                text-xs
-                font-bold
-                text-slate-700
-                transition-colors
-                hover:bg-slate-100
-                hover:text-slate-900
-                focus:outline-none
-                cursor-pointer
-                sm:w-auto
-                sm:text-sm
-                sm:py-3
-              "
-            >
-              Close
-            </button>
+        {/* Sticky Footer */}
+        <div className="shrink-0 border-t border-slate-200 bg-white px-4 pb-[max(12px,env(safe-area-inset-bottom))] pt-3 sm:px-7 sm:py-5">
+          <div className="flex flex-col gap-2 sm:flex-row sm:justify-end sm:gap-3">
 
+            {/* Call Now */}
             <a
-              href="tel:+91 7358559444"
+              href="tel:+917358559444"
               className="
-                inline-flex
-                w-full
-                items-center
-                justify-center
-                gap-2
-                rounded-xl
-                border
-                border-slate-200
-                bg-white
-                px-4
-                py-2.5
-                text-xs
-                font-bold
-                text-slate-900
-                transition-all
-                hover:bg-slate-100
-                cursor-pointer
-                sm:w-auto
-                sm:text-sm
-                sm:py-3
-              "
-            >
-              <Phone size={15} className="sm:h-4 sm:w-4" />
-              <span>Call Now</span>
-            </a>
-
-            <a
-              href="#contact"
-              onClick={onClose}
-              className="
-                inline-flex
+                flex
+                min-h-[52px]
                 w-full
                 items-center
                 justify-center
@@ -366,25 +314,77 @@ function ServiceModal({ service, onClose }) {
                 rounded-xl
                 bg-amber-400
                 px-5
-                py-2.5
-                text-xs
+                py-3
+                text-sm
                 font-extrabold
                 text-slate-950
-                shadow-md
+                shadow-lg
                 shadow-amber-400/20
-                transition-all
+                transition
                 hover:bg-amber-300
-                hover:shadow-lg
-                hover:shadow-amber-400/30
-                cursor-pointer
+                sm:order-2
                 sm:w-auto
-                sm:text-sm
-                sm:py-3
               "
             >
-              <CalendarCheck size={16} className="sm:h-[17px] sm:w-[17px]" />
-              <span>Book Now</span>
+              <Phone size={19} />
+              Call Now
             </a>
+
+            {/* Book Your Ride */}
+            <a
+              href="#contact"
+              onClick={onClose}
+              className="
+                flex
+                min-h-[48px]
+                w-full
+                items-center
+                justify-center
+                gap-2
+                rounded-xl
+                border
+                border-slate-200
+                bg-white
+                px-5
+                py-3
+                text-sm
+                font-bold
+                text-slate-800
+                transition
+                hover:border-amber-300
+                hover:bg-amber-50
+                sm:order-1
+                sm:w-auto
+              "
+            >
+              <CarFront size={18} />
+              Book Your Ride
+              <ArrowRight size={15} />
+            </a>
+
+            {/* Desktop Close */}
+            <button
+              type="button"
+              onClick={onClose}
+              className="
+                hidden
+                rounded-xl
+                border
+                border-slate-200
+                bg-white
+                px-5
+                py-3
+                text-sm
+                font-bold
+                text-slate-600
+                transition
+                hover:bg-slate-100
+                sm:order-3
+                sm:block
+              "
+            >
+              Close
+            </button>
           </div>
         </div>
       </div>
