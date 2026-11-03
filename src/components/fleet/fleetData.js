@@ -37,4 +37,13 @@ export const fleet = [
     luggage: "3 Bags",
     image: `${import.meta.env.BASE_URL}img/innova.jpg`,
   },
+{
+  name: "Tempo Traveller",
+  description: "Comfortable and spacious travel for large groups and family trips.",
+  passengers: "12 Passengers",
+  luggage: "4 Bags",
+  image: `${import.meta.env.BASE_URL}img/tempotraveler.jpeg`,
+},
+
+
 ];
