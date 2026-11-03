@@ -2,34 +2,40 @@ function NavbarLogo() {
   return (
     <a
       href="#home"
-      className="flex items-center shrink-0"
+      aria-label="Porunai Cabs - Home"
+      className="group flex shrink-0 items-center transition duration-300"
     >
-      {/* Logo */}
+      {/* Logo Image */}
       <div
         className="
-          flex items-center justify-between w-full
+          flex h-16 w-28 shrink-0 items-center justify-center
+          overflow-hidden
+          sm:h-20 sm:w-36
+          lg:h-24 lg:w-44
         "
       >
-<img
-  src="/img/logo1.jpeg"
-  alt="Porunaicabs-copy"
-  className="w-full h-[100px] object-contain object-left"
-/>
+        <img
+          src="/logo.png"
+          alt="Porunai Cabs Logo"
+          className="
+            h-full w-full object-contain object-center
+            transition-transform duration-300
+            group-hover:scale-105
+          "
+        />
       </div>
-  
 
-      
-
-      {/* Company Name */}
-      <div className="min-w-0">
-        <p className="whitespace-nowrap text-base font-black tracking-tight text-white sm:text-lg">
-          
+      {/*
+      <div className="flex min-w-0 flex-col justify-center">
+        <p className="whitespace-nowrap text-base font-black tracking-tight text-white sm:text-lg lg:text-xl">
+          Porunai Cabs
         </p>
 
-        <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-amber-300 sm:text-[10px] sm:tracking-[0.22em]">
-          
+        <p className="mt-0.5 whitespace-nowrap text-[8px] font-bold uppercase tracking-[0.13em] text-amber-300 sm:text-[9px]">
+          Your Journey, Our Priority
         </p>
       </div>
+      */}
     </a>
   );
 }
