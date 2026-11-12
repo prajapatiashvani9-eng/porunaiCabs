@@ -4,6 +4,7 @@ import NavbarLogo from "./navbar/NavbarLogo";
 import DesktopMenu from "./navbar/DesktopMenu";
 import MobileMenu from "./navbar/MobileMenu";
 import MobileMenuButton from "./navbar/MobileMenuButton";
+import NavbarContact from "./navbar/NavbarContact";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,7 +45,7 @@ function Navbar() {
           {/* Navbar Top Section */}
           <div className="flex items-center justify-between gap-3">
             <NavbarLogo />
-
+            <NavbarContact />
             {/* Desktop Navigation */}
             <DesktopMenu />
 

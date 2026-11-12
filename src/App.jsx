@@ -4,7 +4,7 @@ import TrustBar from "./components/TrustBar";
 import Services from "./components/Services";
 import Fleet from "./components/Fleet";
 import Routes from "./components/Routes";
-import Tariff from "./components/Tariff";
+// import Tariff from "./components/Tariff";
 import WhyChooseUs from "./components/WhyChooseUs";
 import Reviews from "./components/Reviews";
 import FAQ from "./components/FAQ";
@@ -31,7 +31,7 @@ function App() {
 
         <Routes />
 
-        <Tariff />
+        {/* <Tariff /> */}
 
         <WhyChooseUs />
 

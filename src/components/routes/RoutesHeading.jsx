@@ -22,7 +22,7 @@ function RoutesHeading() {
         "
       >
         <Navigation size={14} />
-        Routes & Areas
+        Destinations We Serve
       </span>
 
       <h2

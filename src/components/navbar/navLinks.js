@@ -12,7 +12,7 @@ const navLinks = [
     link: "#fleet",
   },
   {
-    name: "Routes",
+    name: "Destinations",
     link: "#routes",
   },
   {
