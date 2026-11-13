@@ -25,7 +25,7 @@ function NavbarContact() {
       </span>
 
       <span className="whitespace-nowrap">
-        +91 73585 55944
+        +91 73585 59444
       </span>
     </a>
   );
